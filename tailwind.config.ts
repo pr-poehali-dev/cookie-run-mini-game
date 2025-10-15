@@ -61,6 +61,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cookie: {
+					pink: '#FF6B9D',
+					yellow: '#FFD93D',
+					mint: '#A8E6CF',
+					purple: '#6C5CE7',
+					orange: '#FF6B9D'
 				}
 			},
 			borderRadius: {
@@ -84,11 +91,59 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				bounce: {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-20px)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'wiggle': {
+					'0%, 100%': {
+						transform: 'rotate(-3deg)'
+					},
+					'50%': {
+						transform: 'rotate(3deg)'
+					}
+				},
+				'shake': {
+					'0%, 100%': {
+						transform: 'translateX(0)'
+					},
+					'25%': {
+						transform: 'translateX(-5px)'
+					},
+					'75%': {
+						transform: 'translateX(5px)'
+					}
+				},
+				'pulse-scale': {
+					'0%, 100%': {
+						transform: 'scale(1)'
+					},
+					'50%': {
+						transform: 'scale(1.1)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce': 'bounce 1s infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'shake': 'shake 0.5s ease-in-out',
+				'pulse-scale': 'pulse-scale 2s ease-in-out infinite'
 			}
 		}
 	},
