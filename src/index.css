@@ -111,3 +111,113 @@
     font-family: "Fredoka One", cursive;
   }
 }
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes liquid-flow-1 {
+  0% {
+    transform: translate(-100%, -100%) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(360deg) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes liquid-flow-2 {
+  0% {
+    transform: translate(100%, -100%) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-100%, 100%) rotate(-360deg) scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes liquid-flow-3 {
+  0% {
+    transform: translate(0%, -150%) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(0%, 150%) rotate(180deg) scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
+.liquid-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(220, 38, 38, 0.9),
+    rgba(127, 29, 29, 0.8)
+  );
+  filter: blur(40px);
+  mix-blend-mode: screen;
+}
+
+.animate-liquid-1 {
+  animation: liquid-flow-1 4s ease-in-out forwards;
+}
+
+.animate-liquid-2 {
+  animation: liquid-flow-2 4s ease-in-out 0.3s forwards;
+}
+
+.animate-liquid-3 {
+  animation: liquid-flow-3 4s ease-in-out 0.6s forwards;
+}

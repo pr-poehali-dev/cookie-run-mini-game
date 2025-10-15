@@ -23,12 +23,13 @@ interface Decoration {
   special?: boolean;
 }
 
-type GameStage = 'intro' | 'dialogue1' | 'dialogue2' | 'blackout' | 'shadow-kitchen' | 'ingredients' | 'baking' | 'decoration' | 'complete';
+type GameStage = 'intro' | 'dialogue1' | 'dialogue2' | 'atmosphere' | 'blackout' | 'shadow-kitchen' | 'ingredients' | 'baking' | 'decoration' | 'complete';
 
 const Index = () => {
   const [gameStage, setGameStage] = useState<GameStage>('intro');
   const [dialogueStep, setDialogueStep] = useState(0);
   const [showBlackScreen, setShowBlackScreen] = useState(false);
+  const [liquidAnimation, setLiquidAnimation] = useState(false);
 
   const [ingredients, setIngredients] = useState<Ingredient[]>([
     { id: 'egg', name: 'Яйца', emoji: '🥚', required: 3, current: 0 },
@@ -64,9 +65,12 @@ const Index = () => {
       { speaker: 'shadow', text: '*зевает* Это так... обыденно... 😴', image: 'https://cdn.poehali.dev/files/7d392ee5-7710-4f34-ada0-003088f3acae.png', emotion: 'sleepy' },
     ],
     dialogue2: [
-      { speaker: 'shadow', text: 'Знаешь что, Ваниль? Мне надоело! 😈', image: 'https://cdn.poehali.dev/files/759acc78-0be6-4c30-a3a4-765c75bb5607.png', emotion: 'evil' },
-      { speaker: 'shadow', text: 'Пора добавить... ВАНИЛЬНЫЙ СЮРПРИЗ! ✨', image: 'https://cdn.poehali.dev/files/56bd70dc-7d67-4aca-85a2-0f455c1b406f.png', emotion: 'excited' },
-      { speaker: 'vanilla', text: 'Что?! Shadow, подожди— 😨', image: 'https://cdn.poehali.dev/files/7b9e2a9e-2260-403b-81ac-41f2e95b7408.png', emotion: 'worried' },
+      { speaker: 'shadow', text: 'Знаешь что, Ваниль? Это слишком скучно... 😏', image: 'https://cdn.poehali.dev/files/94fd5299-cf50-470d-bd90-90b2b57a4bda.png', emotion: 'bored' },
+      { speaker: 'shadow', text: 'Нужно добавить... АТМОСФЕРУ! 😈', image: 'https://cdn.poehali.dev/files/759acc78-0be6-4c30-a3a4-765c75bb5607.png', emotion: 'evil' },
+      { speaker: 'vanilla', text: 'Что ты задумал, Shadow...? 😰', image: 'https://cdn.poehali.dev/files/5b95409a-9874-4314-9a67-0e427ef81f1b.png', emotion: 'worried' },
+    ],
+    atmosphere: [
+      { speaker: 'shadow', text: '*щёлк* ✨', image: 'https://cdn.poehali.dev/files/56bd70dc-7d67-4aca-85a2-0f455c1b406f.png', emotion: 'excited' },
     ],
   };
 
@@ -94,13 +98,20 @@ const Index = () => {
       if (dialogueStep < dialogues.dialogue2.length - 1) {
         setDialogueStep(dialogueStep + 1);
       } else {
-        setShowBlackScreen(true);
-        setTimeout(() => {
-          setGameStage('shadow-kitchen');
-          setShowBlackScreen(false);
-          toast('😈 Теперь готовим по-моему!', { duration: 3000 });
-        }, 2000);
+        setGameStage('atmosphere');
+        setDialogueStep(0);
       }
+    } else if (gameStage === 'atmosphere') {
+      setShowBlackScreen(true);
+      setTimeout(() => {
+        setLiquidAnimation(true);
+      }, 500);
+      setTimeout(() => {
+        setGameStage('shadow-kitchen');
+        setShowBlackScreen(false);
+        setLiquidAnimation(false);
+        toast('😈 Теперь готовим по-моему!', { duration: 3000 });
+      }, 4000);
     }
   };
 
@@ -189,14 +200,24 @@ const Index = () => {
 
   if (showBlackScreen) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-6xl text-white animate-pulse">✨</div>
+      <div className="min-h-screen bg-black flex items-center justify-center overflow-hidden relative">
+        {liquidAnimation && (
+          <>
+            <div className="absolute inset-0 bg-black" />
+            <div className="liquid-blob animate-liquid-1" />
+            <div className="liquid-blob animate-liquid-2" />
+            <div className="liquid-blob animate-liquid-3" />
+          </>
+        )}
+        {!liquidAnimation && (
+          <div className="text-6xl text-white animate-pulse">✨</div>
+        )}
       </div>
     );
   }
 
-  if (gameStage === 'intro' || gameStage === 'dialogue1' || gameStage === 'dialogue2') {
-    const currentDialogues = gameStage === 'intro' ? dialogues.intro : gameStage === 'dialogue1' ? dialogues.dialogue1 : dialogues.dialogue2;
+  if (gameStage === 'intro' || gameStage === 'dialogue1' || gameStage === 'dialogue2' || gameStage === 'atmosphere') {
+    const currentDialogues = gameStage === 'intro' ? dialogues.intro : gameStage === 'dialogue1' ? dialogues.dialogue1 : gameStage === 'dialogue2' ? dialogues.dialogue2 : dialogues.atmosphere;
     const currentDialogue = currentDialogues[dialogueStep];
     const isVanilla = currentDialogue.speaker === 'vanilla';
 
@@ -235,7 +256,7 @@ const Index = () => {
                   : 'bg-gradient-to-r from-blue-600 to-purple-600'
               }`}
             >
-              {dialogueStep < currentDialogues.length - 1 ? 'Далее →' : gameStage === 'dialogue2' ? '✨ Сюрприз!' : 'Далее →'}
+              {dialogueStep < currentDialogues.length - 1 ? 'Далее →' : gameStage === 'atmosphere' ? '💡 Выключить свет' : 'Далее →'}
             </Button>
           </div>
         </Card>
