@@ -57,15 +57,15 @@ const Index = () => {
   const dialogues = {
     intro: [
       { speaker: 'vanilla', text: 'Shadow Milk, давай вместе испечём ванильный торт! 🍰', image: 'https://cdn.poehali.dev/files/9f57e85d-3fa7-48ec-8c41-542655af52d4.png' },
-      { speaker: 'shadow', text: 'Хм... Звучит скучно, но почему бы и нет~ 😏', image: 'https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png' },
+      { speaker: 'shadow', text: 'Хм... Звучит скучно, но почему бы и нет~ 😏', image: 'https://cdn.poehali.dev/files/94fd5299-cf50-470d-bd90-90b2b57a4bda.png', emotion: 'bored' },
     ],
     dialogue1: [
       { speaker: 'vanilla', text: 'Отлично! Давай начнём с ингредиентов!', image: 'https://cdn.poehali.dev/files/9f57e85d-3fa7-48ec-8c41-542655af52d4.png' },
-      { speaker: 'shadow', text: '*зевает* Это так... обыденно... 😴', image: 'https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png' },
+      { speaker: 'shadow', text: '*зевает* Это так... обыденно... 😴', image: 'https://cdn.poehali.dev/files/7d392ee5-7710-4f34-ada0-003088f3acae.png', emotion: 'sleepy' },
     ],
     dialogue2: [
-      { speaker: 'shadow', text: 'Знаешь что, Ваниль? Мне надоело! 😈', image: 'https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png' },
-      { speaker: 'shadow', text: 'Пора добавить... ВАНИЛЬНЫЙ СЮРПРИЗ! ✨', image: 'https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png' },
+      { speaker: 'shadow', text: 'Знаешь что, Ваниль? Мне надоело! 😈', image: 'https://cdn.poehali.dev/files/759acc78-0be6-4c30-a3a4-765c75bb5607.png', emotion: 'evil' },
+      { speaker: 'shadow', text: 'Пора добавить... ВАНИЛЬНЫЙ СЮРПРИЗ! ✨', image: 'https://cdn.poehali.dev/files/56bd70dc-7d67-4aca-85a2-0f455c1b406f.png', emotion: 'excited' },
       { speaker: 'vanilla', text: 'Что?! Shadow, подожди— 😨', image: 'https://cdn.poehali.dev/files/9f57e85d-3fa7-48ec-8c41-542655af52d4.png' },
     ],
   };
@@ -250,7 +250,7 @@ const Index = () => {
           <div className="text-8xl animate-wiggle">😈</div>
           
           <img 
-            src="https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png"
+            src="https://cdn.poehali.dev/files/56bd70dc-7d67-4aca-85a2-0f455c1b406f.png"
             alt="Shadow Milk"
             className="w-48 h-48 mx-auto object-contain animate-bounce"
           />
@@ -286,7 +286,7 @@ const Index = () => {
           <div className="text-9xl animate-bounce">🎉</div>
           
           <img 
-            src="https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png"
+            src="https://cdn.poehali.dev/files/10e7a190-5aba-4ef4-9d11-7868ddaeb4d9.png"
             alt="Shadow Milk"
             className="w-40 h-40 mx-auto object-contain animate-wiggle"
           />
@@ -329,7 +329,7 @@ const Index = () => {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-blue-800 to-indigo-900 p-4">
         <Card className="max-w-2xl w-full p-8 text-center space-y-6 shadow-2xl border-4 border-blue-400">
           <img 
-            src="https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png"
+            src="https://cdn.poehali.dev/files/759acc78-0be6-4c30-a3a4-765c75bb5607.png"
             alt="Shadow Milk"
             className="w-32 h-32 mx-auto object-contain"
           />
@@ -366,7 +366,7 @@ const Index = () => {
           <Card className="p-6 shadow-xl border-4 border-blue-400 bg-gradient-to-r from-blue-900/80 to-purple-900/80">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <img 
-                src="https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png"
+                src="https://cdn.poehali.dev/files/94fd5299-cf50-470d-bd90-90b2b57a4bda.png"
                 alt="Shadow Milk"
                 className="w-24 h-24 object-contain"
               />
@@ -470,7 +470,7 @@ const Index = () => {
         <Card className="p-6 shadow-xl border-4 border-blue-400 bg-gradient-to-r from-blue-900/80 to-purple-900/80">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <img 
-              src="https://cdn.poehali.dev/files/3e969ae9-0da6-4246-b846-016512c1c4d4.png"
+              src="https://cdn.poehali.dev/files/56bd70dc-7d67-4aca-85a2-0f455c1b406f.png"
               alt="Shadow Milk"
               className="w-24 h-24 object-contain"
             />
