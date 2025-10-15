@@ -56,17 +56,17 @@ const Index = () => {
 
   const dialogues = {
     intro: [
-      { speaker: 'vanilla', text: 'Shadow Milk, давай вместе испечём ванильный торт! 🍰', image: 'https://cdn.poehali.dev/files/9f57e85d-3fa7-48ec-8c41-542655af52d4.png' },
+      { speaker: 'vanilla', text: 'Shadow Milk, давай вместе испечём ванильный торт! 🍰', image: 'https://cdn.poehali.dev/files/9f36997f-ea66-4bd9-bfac-a0dad940110c.png', emotion: 'happy' },
       { speaker: 'shadow', text: 'Хм... Звучит скучно, но почему бы и нет~ 😏', image: 'https://cdn.poehali.dev/files/94fd5299-cf50-470d-bd90-90b2b57a4bda.png', emotion: 'bored' },
     ],
     dialogue1: [
-      { speaker: 'vanilla', text: 'Отлично! Давай начнём с ингредиентов!', image: 'https://cdn.poehali.dev/files/9f57e85d-3fa7-48ec-8c41-542655af52d4.png' },
+      { speaker: 'vanilla', text: 'Отлично! Давай начнём с ингредиентов!', image: 'https://cdn.poehali.dev/files/87ad8234-a254-47f7-b7dd-a002a3464b5a.png', emotion: 'excited' },
       { speaker: 'shadow', text: '*зевает* Это так... обыденно... 😴', image: 'https://cdn.poehali.dev/files/7d392ee5-7710-4f34-ada0-003088f3acae.png', emotion: 'sleepy' },
     ],
     dialogue2: [
       { speaker: 'shadow', text: 'Знаешь что, Ваниль? Мне надоело! 😈', image: 'https://cdn.poehali.dev/files/759acc78-0be6-4c30-a3a4-765c75bb5607.png', emotion: 'evil' },
       { speaker: 'shadow', text: 'Пора добавить... ВАНИЛЬНЫЙ СЮРПРИЗ! ✨', image: 'https://cdn.poehali.dev/files/56bd70dc-7d67-4aca-85a2-0f455c1b406f.png', emotion: 'excited' },
-      { speaker: 'vanilla', text: 'Что?! Shadow, подожди— 😨', image: 'https://cdn.poehali.dev/files/9f57e85d-3fa7-48ec-8c41-542655af52d4.png' },
+      { speaker: 'vanilla', text: 'Что?! Shadow, подожди— 😨', image: 'https://cdn.poehali.dev/files/7b9e2a9e-2260-403b-81ac-41f2e95b7408.png', emotion: 'worried' },
     ],
   };
 
